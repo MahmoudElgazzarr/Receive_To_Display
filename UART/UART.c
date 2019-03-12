@@ -6,6 +6,8 @@
  */
 #include "UART.h"
 
+ uint8_t global_data = 0;
+ uint8_t global_flag = 0;
 
 void UART0_init(void)
 {
@@ -65,4 +67,17 @@ void UART0_disable()
 {
     /* Disable the UART */
     UARTDisable(UART0_BASE);
+}
+
+void UART0_Task_Recive(void)
+{
+    global_data = UART0_receive();
+    if (global_data > 0 )
+    {
+        global_flag = 1;
+    }
+    else
+    {
+        global_flag = 0;
+    }
 }

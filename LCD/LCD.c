@@ -263,8 +263,3 @@ static void LCD_initSection6(void)
     /* Set LCD To 4 Bit Mode */
     LCD_sendCommand(LCD_CMD_Cursor_Beginning_1st_line_e);
 }
-
-
-
-
-

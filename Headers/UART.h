@@ -19,10 +19,13 @@
 #include "driverlib/pin_map.h"
 
 #define UART0_BAUD_RATE 38400
+extern uint8_t global_data;
+extern uint8_t global_flag;
 
 void UART0_init(void);
 uint8_t UART0_receive(void);
 void UART0_send(uint8_t ch);
 void UART0_disable(void);
+void UART0_Task_Recive(void);
 
 #endif /* UART_H_ */
